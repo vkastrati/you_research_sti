@@ -1,0 +1,2 @@
+module ConferenceArticlesHelper
+end

@@ -1,0 +1,2 @@
+class BookWhole < Publication
+end

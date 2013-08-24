@@ -1,0 +1,137 @@
+<%= form_for @publication, :html => { :class => 'form-horizontal' } do |f| %>
+
+    <div class="control-group">
+      <%= f.label :type, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select :id, Publication.order(:type), :author, :type, include_blank: true, :class => 'text_field' %>
+      </div>
+    </div>
+
+
+  <div class="control-group">
+    <%= f.label :author, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :author, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :title, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :year, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :year, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :publication, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :publication, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :volume, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :volume, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :issue, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :issue, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :page, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :page, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :keywords, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :keywords, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :abstract, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :abstract, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :publisher, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :publisher, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :placeofpublication, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :placeofpublication, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :editor, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :editor, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :seriestitle, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :seriestitle, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :seriesvolume, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :seriesvolume, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :seriesissue, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :seriesissue, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :issn, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :issn, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :isbn, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :isbn, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :area, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :area, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :url, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :url, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :doi, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :doi, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                publications_path, :class => 'btn' %>
+  </div>
+<% end %>

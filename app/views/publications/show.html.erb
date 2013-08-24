@@ -1,0 +1,61 @@
+<%- model_class = Publication -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
+  <dd><%= @publication.type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:author) %>:</strong></dt>
+  <dd><%= @publication.author %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @publication.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:year) %>:</strong></dt>
+  <dd><%= @publication.year %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:publication) %>:</strong></dt>
+  <dd><%= @publication.publication %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:volume) %>:</strong></dt>
+  <dd><%= @publication.volume %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:issue) %>:</strong></dt>
+  <dd><%= @publication.issue %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:page) %>:</strong></dt>
+  <dd><%= @publication.page %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:keywords) %>:</strong></dt>
+  <dd><%= @publication.keywords %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:abstract) %>:</strong></dt>
+  <dd><%= @publication.abstract %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:publisher) %>:</strong></dt>
+  <dd><%= @publication.publisher %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:placeofpublication) %>:</strong></dt>
+  <dd><%= @publication.placeofpublication %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:editor) %>:</strong></dt>
+  <dd><%= @publication.editor %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:seriestitle) %>:</strong></dt>
+  <dd><%= @publication.seriestitle %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:seriesvolume) %>:</strong></dt>
+  <dd><%= @publication.seriesvolume %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:seriesissue) %>:</strong></dt>
+  <dd><%= @publication.seriesissue %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:issn) %>:</strong></dt>
+  <dd><%= @publication.issn %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:isbn) %>:</strong></dt>
+  <dd><%= @publication.isbn %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:area) %>:</strong></dt>
+  <dd><%= @publication.area %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
+  <dd><%= @publication.url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:doi) %>:</strong></dt>
+  <dd><%= @publication.doi %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              publications_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_publication_path(@publication), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              publication_path(@publication),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

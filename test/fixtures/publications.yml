@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  author: MyString
+  title: MyString
+  year: MyString
+  publication: MyString
+  volume: MyString
+  issue: MyString
+  page: MyString
+  keywords: MyString
+  abstract: MyString
+  publisher: MyString
+  placeofpublication: MyString
+  editor: MyString
+  seriestitle: MyString
+  seriesvolume: MyString
+  seriesissue: MyString
+  issn: 9.99
+  isbn: 9.99
+  area: MyString
+  url: MyString
+  doi: 9.99
+
+two:
+  type: 
+  author: MyString
+  title: MyString
+  year: MyString
+  publication: MyString
+  volume: MyString
+  issue: MyString
+  page: MyString
+  keywords: MyString
+  abstract: MyString
+  publisher: MyString
+  placeofpublication: MyString
+  editor: MyString
+  seriestitle: MyString
+  seriesvolume: MyString
+  seriesissue: MyString
+  issn: 9.99
+  isbn: 9.99
+  area: MyString
+  url: MyString
+  doi: 9.99

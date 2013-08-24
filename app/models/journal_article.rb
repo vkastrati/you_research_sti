@@ -1,0 +1,2 @@
+class JournalArticle < Publication
+end

@@ -1,0 +1,2 @@
+class ConferenceArticle < Publication
+end
