@@ -1,137 +1,70 @@
-<%= form_for @publication, :html => { :class => 'form-horizontal' } do |f| %>
+
+<%= simple_form_for @publication, :html => { :class => 'form-horizontal' } do |f| %>
+
 
     <div class="control-group">
       <%= f.label :type, :class => 'control-label' %>
       <div class="controls">
-        <%= f.collection_select :id, Publication.order(:type), :author, :type, include_blank: true, :class => 'text_field' %>
+        <select id='publication_type'>
+            <option value=''></option>
+            <option value='BookChapter'>Book chapter</option>
+            <option value='BookWhole'>Book whole</option>
+            <option value='ConferenceArticle'>Conference article</option>
+            <option value='JournalArticle'>Journal article</option>
+        </select>
       </div>
     </div>
 
+    <input type='hidden' id='p_type' name='p_type' value=''/>
 
-  <div class="control-group">
-    <%= f.label :author, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :author, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :title, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :year, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :year, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :publication, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :publication, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :volume, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :volume, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :issue, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :issue, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :page, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :page, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :keywords, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :keywords, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :abstract, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :abstract, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :publisher, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :publisher, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :placeofpublication, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :placeofpublication, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :editor, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :editor, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :seriestitle, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :seriestitle, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :seriesvolume, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :seriesvolume, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :seriesissue, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :seriesissue, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :issn, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :issn, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :isbn, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :isbn, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :area, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :area, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :url, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :url, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :doi, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :doi, :class => 'text_field' %>
-    </div>
-  </div>
+    <%= f.input :author %>
+    <%= f.input :title %>
+    <%= f.input :year %>
+    <%= f.input :publication %>
+    <%= f.input :volume %>
+    <%= f.input :issue %>
+    <%= f.input :page %>
+    <%= f.input :keywords %>
+    <%= f.input :abstract %>
+    <%= f.input :publisher %>
+    <%= f.input :placeofpublication %>
+    <%= f.input :editor %>
+    <%= f.input :seriestitle %>
+    <%= f.input :seriesvolume %>
+    <%= f.input :seriesissue %>
+    <%= f.input :issn %>
+    <%= f.input :isbn %>
+    <%= f.input :area %>
+    <%= f.input :url %>
+    <%= f.input :doi %>
+    <%= f.button :submit %>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                publications_path, :class => 'btn' %>
-  </div>
+    <script>
+        $(document).ready(function(){
+            var current_type = null;
+            $('#publication_type').change(function(e){
+                current_type = $(e.target).val();
+
+                $("#p_type").val(current_type);
+                $('input', $(e.target).parents('form')).each(function(i,el){
+
+                    if($.inArray($(el).attr('id'), form_fields_for(current_type)) != -1){
+                        $(el).parents('.input').show();
+                    }else{
+                        $(el).parents('.input').hide();
+                    }
+                });
+            });
+            var form_fields_for= function(type){
+                var types = {
+                    BookChapter: ['publication_author','publication_title'],
+                    JournalArticle: ['publication_author', 'publication_title', 'publication_year'],
+                    BookWhole: ['',''],
+                    ConferenceArticle: ['','']
+                };
+                return types[type];
+            };
+        });
+    </script>
+
 <% end %>

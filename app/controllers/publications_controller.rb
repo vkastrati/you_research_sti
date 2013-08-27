@@ -19,12 +19,14 @@ class PublicationsController < ApplicationController
 
   # GET /publications/1/edit
   def edit
+
   end
 
   # POST /publications
   # POST /publications.json
   def create
-    @publication = Publication.new(publication_params)
+
+    @publication = params[:p_type].constantize.new(publication_params)
 
     respond_to do |format|
       if @publication.save
